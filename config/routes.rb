@@ -10,5 +10,15 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
+  get "tasks", to: "tasks#index"
+  # rediriger vers une page qui affiche le formulaire permettant de créer une nouvelle tache
+  get "tasks/new", to: "tasks#new"
+  get "tasks/:id", to: "tasks#show", as: "task"
   # root "posts#index"
+  post "tasks", to: "tasks#create"
+  # routes pour modifier une tache
+  get "tasks/:id/edit", to: "tasks#edit", as: "edit"
+  # mise a jour de la tache après envoi du formulaire
+  patch "tasks/:id", to: "tasks#update"
+  delete "tasks/:id", to: "tasks#destroy"
 end

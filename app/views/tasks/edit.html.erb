@@ -1,0 +1,8 @@
+<h2>Modifier une tache, pensez à sauvegarder</h2>
+<%= form_with model: @tasks do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<%= f.label :details %>
+<%= f.text_area :details %>
+<%= f.submit %>
+<% end %>
